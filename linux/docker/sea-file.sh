@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -d --name seafile   -e SEAFILE_SERVER_HOSTNAME=disk.thxan.com   -e SEAFILE_ADMIN_EMAIL=admin@email.com   -e SEAFILE_ADMIN_PASSWORD=root   -v /opt/seafile-data:/shared   -p 8238:80   seafileltd/seafile:latest
+docker run -d --name seafile   -e SEAFILE_SERVER_HOSTNAME=disk.example.com   -e SEAFILE_ADMIN_EMAIL=admin@email.com   -e SEAFILE_ADMIN_PASSWORD=mypassword   -v /opt/seafile-data:/shared   -p 8238:80   seafileltd/seafile:latest
