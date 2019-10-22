@@ -1,0 +1,22 @@
+#定义pod文件busybox-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  labels:
+    name: busybox
+spec:
+  containers:
+    - image: busybox
+      command:
+        - sleep
+        - "3600"
+      imagePullPolicy: IfNotPresent
+      name: busybox
+      volumeMounts:
+        - mountPath: /busybox-data
+          name: data
+  volumes:
+  - hostPath:
+      path: /tmp/data
+    name: data

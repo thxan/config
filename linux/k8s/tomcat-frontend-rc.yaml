@@ -1,0 +1,33 @@
+#先在 Pod 上声明一个 Volume，然后在容器里引用该 Volume 并 Mount 到容器里的某个目录上
+#给之前的 Tomcat Pod 增加一个名字为 datavol 的 Volume，并且 Mount 到容器的 /mydata-data 目录上
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    tier: frontend
+  template:
+    metadata:
+      labels:
+        app: app-demo
+        tier: frontend
+    spec:
+      containers:
+      - name: tomcat-demo
+        image: daocloud.io/library/tomcat
+        #add
+        volumeMounts:
+        - mountPath: /mydata-data
+          name: datavol
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        ports:
+        - containerPort: 80
+      #add 
+      volumes:
+      - name: datavol
+        emptyDir: {}
