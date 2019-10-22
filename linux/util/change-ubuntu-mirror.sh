@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_URL=https://gitee.com/thxan/config/raw/master/
+GIT_URL=https://raw.githubusercontent.com/thxan/config/master
 
 # ssh path
 SOURCE_URL=$GIT_URL/linux/apt/sources.list.18
