@@ -3,7 +3,7 @@
 GIT_URL=https://raw.githubusercontent.com/thxan/config/master
 
 # ssh path
-SOURCE_URL=$GIT_URL/linux/apt/sources.list.18
+SOURCE_URL=$GIT_URL/common/apt/sources.list.18
 SOURCE_LIST=/etc/apt/sources.list
 SOURCE_LIST_BAK=/etc/apt/sources.list.bak
 # 使用备份的文件加后缀到当前文件
