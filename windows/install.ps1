@@ -1,3 +1,5 @@
+Set-ExecutionPolicy -ExecutionPolicy Bypass
+
 Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 
 scoop install aria2
